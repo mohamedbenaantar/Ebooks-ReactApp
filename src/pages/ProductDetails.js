@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Rating } from '../components/Elements/Rating'
+import { useTitle } from '../hooks/useTitle'
 export const ProductDetails = () => {
   const [product, setProduct] = useState({})
   const { id } = useParams()
@@ -12,6 +13,8 @@ export const ProductDetails = () => {
     }
     fetchProducts()
   },[])
+
+  useTitle(product.name)
   return (
     <main>
         <section>
@@ -33,7 +36,7 @@ export const ProductDetails = () => {
                 {product.best_seller && (<span className="font-semibold text-amber-500 border bg-amber-50 rounded-lg px-3 py-1 mr-2">BEST SELLER</span>)}   
                 {product.in_stock && (<span className="font-semibold text-emerald-600	border bg-slate-100 rounded-lg px-3 py-1 mr-2">INSTOCK</span>)}
                 {!product.in_stock &&(<span className="font-semibold text-rose-700 border bg-slate-100 rounded-lg px-3 py-1 mr-2">OUT OF STOCK</span>)}
-                <span className="font-semibold text-blue-500 border bg-slate-100 rounded-lg px-3 py-1 mr-2">{product.size}</span>
+                <span className="font-semibold text-blue-500 border bg-slate-100 rounded-lg px-3 py-1 mr-2">{product.size} MB</span>
               </p>
               <p className="my-3">
                 <button className={`inline-flex items-center py-2 px-5 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800`}>Add To Cart <i className="ml-1 bi bi-plus-lg"></i></button>
