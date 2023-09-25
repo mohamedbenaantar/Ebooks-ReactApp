@@ -7,4 +7,10 @@
 
 * {
   font-family: 'Roboto', sans-serif;
+  
+}
+
+main {
+  margin: auto;
+  padding: 100px;
 }
