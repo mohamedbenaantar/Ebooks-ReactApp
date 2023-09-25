@@ -1,10 +1,13 @@
-
+import { AllRoutes } from './routes/AllRoutes';
+import { Header , Footer } from "./components" 
 import './App.css';
 
 function App() {
   return (
     <div className="text-3xl">
-      Hello World!
+      <Header />
+      <AllRoutes/>
+      <Footer />
     </div>
   );
 }
