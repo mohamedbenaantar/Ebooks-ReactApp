@@ -1,4 +1,4 @@
-import { ProductCard } from "../../../components/Elements/ProductCard"
+import { ProductCard } from "../../../components"
 import { useState, useEffect } from "react"
 export const FeaturedProducts = () => {
     const [products, setProducts] = useState([])
