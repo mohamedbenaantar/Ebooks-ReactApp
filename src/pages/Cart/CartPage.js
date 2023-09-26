@@ -1,10 +1,11 @@
 import { CartEmpty } from "./components/CartEmpty"
 import { CartList } from "./components/CartList"
+import { useCart } from "./../../context"
 export const CartPage = () => {
-    const cartLength = 0
+    const  { cartList } = useCart()
   return (
     <main>
-        {cartLength ? <CartEmpty/> :  <CartList/>}
+        {!cartList.length ? <CartEmpty/> :  <CartList/>}
     </main>
   )
 }
