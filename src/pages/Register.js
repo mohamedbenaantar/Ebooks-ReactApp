@@ -17,7 +17,12 @@ export const Register = () => {
         });
         const data = await response.json();
         data.accessToken ? navigate("/products") : toast.error(data);
-        console.log(data)
+        // console.log(data)
+
+        if(data.accessToken){
+            sessionStorage.setItem("token", JSON.stringify(data.accessToken))
+            sessionStorage.setItem("cid", JSON.stringify(data.user.id))
+        }
     }
     return (
       <main>
