@@ -3,3 +3,5 @@ export { ProductList } from "./Products/ProductList"
 
 export { Login} from "./Login" 
 export { Register } from "./Register" 
+
+export { CartPage } from "./Cart/CartPage" 
