@@ -2,7 +2,9 @@ import React from 'react'
 import { Routes, Route } from "react-router-dom"
 import { HomePage, ProductList, Login, Register, CartPage } from "./../pages"
 import { ProductDetails } from '../pages/ProductDetails'
+import { ProtectedRoute } from './ProtectedRoute'
 export const AllRoutes = () => {
+ 
   return (
     <>
     <Routes>
@@ -11,7 +13,7 @@ export const AllRoutes = () => {
         <Route path="/products/:id" element={<ProductDetails/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/cart" element={<ProtectedRoute><CartPage/></ProtectedRoute>}/>
     </Routes>
     </>
   )

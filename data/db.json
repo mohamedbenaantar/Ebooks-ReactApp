@@ -256,6 +256,12 @@
       "password": "$2a$10$2R1rxQLL05tQuRHL2bhCeOOp8lrW56Zvr9Gv5USeULwk3PnLn9jem",
       "name": "Johnny",
       "id": 3
+    },
+    {
+      "email": "johnaThan@gmail.com",
+      "password": "$2a$10$b.0CPvyfm.PjJhnhqonzDeGR61oP1/7w0ISg9hv94Zf0NIAIYPgAm",
+      "name": "Johnathan",
+      "id": 4
     }
   ]
 }
