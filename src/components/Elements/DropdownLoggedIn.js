@@ -18,7 +18,7 @@ export const DropdownLoggedIn = ({setDropDown}) => {
                   <Link onClick={() => setDropDown(false)} to="/" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">All eBooks</Link>
               </li>
               <li>
-                  <Link onClick={() => setDropDown(false)} to="/" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
+                  <Link onClick={() => setDropDown(false)} to="/dashboard" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
               </li>
           </ul>
           <div className="py-1">
