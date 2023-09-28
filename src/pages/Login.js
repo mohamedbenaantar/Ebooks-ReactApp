@@ -1,6 +1,7 @@
 import { useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
+import { login } from "./../services/"
 export const Login = () => {
     const navigate = useNavigate()
     // hold my references
@@ -16,21 +17,8 @@ export const Login = () => {
             password: password.current.value
         }
 
-        const requestOption = {
-            method: "POST",
-            headers: {"content-type": "application/json"},
-            body: JSON.stringify(authDetails)
-        }
-        const response = await fetch("http://localhost:8000/login", requestOption)
-
-        const data = await response.json()
-        // I have my accessToken login is success
+        const data = await login(authDetails)
         data.accessToken ? navigate("/products") : toast.error(data)
-
-        if(data.accessToken){
-            sessionStorage.setItem("token", JSON.stringify(data.accessToken))
-            sessionStorage.setItem("cid", JSON.stringify(data.user.id))
-        }
     }
     return (
       <main>

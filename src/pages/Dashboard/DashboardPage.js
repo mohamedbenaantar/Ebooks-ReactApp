@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { DashboardOrder } from './components/DashboardOrder'
 import { DashboardEmpty } from './components/DashboardEmpty'
+import { getUserOrders } from '../../services'
 export const DashboardPage = () => {
   // I need to fetch data from orders for a specefic user to display it here
   const [orders, setOrders] = useState([])
@@ -10,13 +11,9 @@ export const DashboardPage = () => {
 
   useEffect(() => {
     async function fetchOrders(){
-      const response = await fetch(`http://localhost:8000/660/orders?user.id=${id}`,{
-        method: "GET",
-        headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`}
-      })
-      const data = await response.json()
+      const data = await getUserOrders()
       setOrders(data)
-    }
+    } 
     fetchOrders()
   }, [])
   return (
