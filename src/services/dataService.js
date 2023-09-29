@@ -6,7 +6,7 @@ function getSessionInfo(){
 }
 export async function getUser(){
     const browseData = getSessionInfo()
-    const response = await fetch(`http://localhost:8000/600/users/${browseData.id}`,{
+    const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${browseData.id}`,{
                 method: "GET",
                 headers: {"Content-Type": "application/json", Authorization: `Bearer ${browseData.token}`}
             })
@@ -16,7 +16,7 @@ export async function getUser(){
 
 export async function getUserOrders(){
     const browseData = getSessionInfo()
-    const response = await fetch(`http://localhost:8000/660/orders?user.id=${browseData.id}`,{
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${browseData.id}`,{
         method: "GET",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browseData.token}`}
       })
@@ -38,7 +38,7 @@ export async function createOrder({cartList, total, user}){
             id: user.id
         } 
     }
-    const response = await fetch("http://localhost:8000/660/orders", {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, {
         method: "POST",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browseData.token}`},
         body: JSON.stringify(order)

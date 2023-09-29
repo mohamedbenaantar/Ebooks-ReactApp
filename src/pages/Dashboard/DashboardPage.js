@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { DashboardOrder } from './components/DashboardOrder'
 import { DashboardEmpty } from './components/DashboardEmpty'
 import { getUserOrders } from '../../services'
+import { useTitle } from '../../hooks/useTitle'
 export const DashboardPage = () => {
   // I need to fetch data from orders for a specefic user to display it here
   const [orders, setOrders] = useState([])
-  
+  useTitle("Dashboard")
   const token = JSON.parse(sessionStorage.getItem("token"))
   const id = JSON.parse(sessionStorage.getItem("cid"))
 

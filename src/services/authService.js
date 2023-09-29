@@ -4,7 +4,7 @@ export async function login(authDetails) {
         headers: {"content-type": "application/json"},
         body: JSON.stringify(authDetails)
     }
-    const response = await fetch("http://localhost:8000/login", requestOption)
+    const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOption)
 
     const data = await response.json()
     // I have my accessToken login is success
@@ -21,7 +21,7 @@ export async function login(authDetails) {
 
 export async function register(authDetails){
     // add to fetch URLS , methods, headers
-    const response = await fetch("http://localhost:8000/register", {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/register`, {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify(authDetails)

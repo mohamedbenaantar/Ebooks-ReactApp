@@ -2,7 +2,9 @@ import { useState } from "react"
 import { CartCard } from "./CartCard"
 import { Checkout } from "./Checkout"
 import { useCart } from "./../../../context"
+import { useTitle } from "./../../../hooks/useTitle"
 export const CartList = () => {
+    
     const [checkOut, setCheckOut] = useState(false)
     const { cartList, total } = useCart()
 
