@@ -19,4 +19,4 @@ RUN npm run build
 EXPOSE 3000 8000
 
 #  start both my app and JSON Server
-CMD ["npx", "concurrently", "npm:start", "npx json-server data/db.json -m ./node_modules/json-server-auth -r data/routes.json --port 8000"] 
+CMD ["npx", "concurrently", "npm:start", "npx json-server /data/db.json -m ./node_modules/json-server-auth -r /data/routes.json --port 8000"] 
